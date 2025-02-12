@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job Opening</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            font-size: 24px;
+            color: #333333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .container h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #666666;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .submit-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0073b1;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #005f8d;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f2f2f2;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Post a Job Opening</h1>
+    </header>
+    <div class="container">
+        <h2>Job Details</h2>
+        <form id="job-post-form">
+            <div class="form-group">
+                <label for="job-title">Job Title</label>
+                <input type="text" id="job-title" placeholder="e.g., Software Engineer" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" placeholder="e.g., Bengaluru, Karnataka" required>
+            </div>
+            <div class="form-group">
+                <label for="min-experience">Minimum Experience (in years)</label>
+                <select id="min-experience" required>
+                    <option value="">Select</option>
+                    <option value="0">Fresher (0 years)</option>
+                    <option value="1">1 year</option>
+                    <option value="2">2 years</option>
+                    <option value="3">3 years</option>
+                    <option value="5">5+ years</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description">Job Description</label>
+                <textarea id="description" placeholder="Describe the role, responsibilities, and requirements..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="application-link">Application Link</label>
+                <input type="url" id="application-link" placeholder="https://yourcompany.com/apply" required>
+            </div>
+            <button type="submit" class="submit-btn">Post Job</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2023 Job Portal. All rights reserved.</p>
+    </footer>
+    <script>
+        // JavaScript to handle form submission
+        document.getElementById('job-post-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent actual form submission
+
+            // Gather form data
+            const jobTitle = document.getElementById('job-title').value;
+            const location = document.getElementById('location').value;
+            const minExperience = document.getElementById('min-experience').value;
+            const description = document.getElementById('description').value;
+            const applicationLink = document.getElementById('application-link').value;
+
+            // Validate form fields
+            if (!jobTitle || !location || !minExperience || !description || !applicationLink) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            // Simulate posting the job
+            alert(`Job "${jobTitle}" in ${location} has been posted successfully!`);
+            this.reset(); // Clear the form after successful submission
+        });
+    </script>
+</body>
+</html>
