@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.359.0/lucide.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="logo.png" alt="Course LMS">
+                <span>COURSE LMS</span>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active"><i data-lucide="user"></i> My Profile</li>
+                    <li><i data-lucide="message-square"></i> Message</li>
+                    <li><i data-lucide="shopping-cart"></i> Purchase History</li>
+                    <li><i data-lucide="bell"></i> Notifications</li>
+                    <li><i data-lucide="users"></i> Affiliate Area</li>
+                    <li><i data-lucide="settings"></i> Settings</li>
+                    <li><i data-lucide="log-out"></i> Logout</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Start typing your search">
+                    <button class="search-btn">Search</button>
+                </div>
+                <div class="user-profile">
+                    <i data-lucide="bell"></i>
+                    <i data-lucide="mail"></i>
+                    <img src="profile.jpg" alt="Profile" class="profile-img">
+                    <span>Tonmoy Khan ▼</span>
+                </div>
+            </header>
+
+            <!-- Profile Section -->
+            <section class="profile-section">
+                <div class="profile-card">
+                    <img src="profile.jpg" alt="Profile" class="large-profile-img">
+                    <div class="profile-info">
+                        <h2>Tonmoy Khan</h2>
+                        <p>10 Classes Enroll | 4 Following</p>
+                    </div>
+                    <button class="edit-profile-btn">Edit Profile</button>
+                </div>
+            </section>
+
+            <!-- Stats Grid -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <i data-lucide="book-open" class="pink"></i>
+                    <h3>10</h3>
+                    <p>Total Enroll Course</p>
+                </div>
+                <div class="stat-card">
+                    <i data-lucide="video" class="green"></i>
+                    <h3>500</h3>
+                    <p>Total Enroll Course</p>
+                </div>
+                <div class="stat-card">
+                    <i data-lucide="bell" class="purple"></i>
+                    <h3>100</h3>
+                    <p>Total Notifications</p>
+                </div>
+                <div class="stat-card">
+                    <i data-lucide="users" class="orange"></i>
+                    <h3>100</h3>
+                    <p>Purchase History</p>
+                </div>
+                <div class="stat-card">
+                    <i data-lucide="dollar-sign" class="pink"></i>
+                    <h3>100.00</h3>
+                    <p>Account Balance</p>
+                </div>
+            </section>
+
+            <!-- Three Column Grid -->
+            <section class="three-column-grid">
+                <!-- Achievement Card -->
+                <div class="card achievement-card">
+                    <h3>Achievement</h3>
+                    <div class="achievement-content">
+                        <div class="trophy-icon">🏆</div>
+                        <div class="achievement-info">
+                            <h4>78.50 Point</h4>
+                            <p>Best WordPress Developer Badge</p>
+                            <button class="next-badge-btn">Next Badge</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Time Card -->
+                <div class="card learning-time-card">
+                    <h3>Learning Time</h3>
+                    <div class="time-header">
+                        <span>2h</span>
+                        <span>Today</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-item">
+                            <span>Reading</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span>Video Watching</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Tasks Card -->
+                <div class="card upcoming-tasks-card">
+                    <div class="card-header">
+                        <h3>Upcoming Tasks</h3>
+                        <a href="#" class="see-all">See all</a>
+                    </div>
+                    <div class="tasks-list">
+                        <div class="task-item">
+                            <div class="task-info">
+                                <div class="task-icon psychology"></div>
+                                <div>
+                                    <h4>Psychology</h4>
+                                    <p>11:00 AM - 12:00 PM</p>
+                                </div>
+                            </div>
+                            <span class="task-action">−</span>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-info">
+                                <div class="task-icon marketing"></div>
+                                <div>
+                                    <h4>Marketing</h4>
+                                    <p>1:00 PM - 2:00 PM</p>
+                                </div>
+                            </div>
+                            <span class="task-action">−</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Activity Chart -->
+            <section class="activity-section">
+                <div class="card">
+                    <h3>My Activity</h3>
+                    <canvas id="activityChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Payment History -->
+            <section class="payment-history">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Payment History</h3>
+                        <a href="#" class="see-all">See all</a>
+                    </div>
+                    <div class="payment-list">
+                        <div class="payment-item">
+                            <div class="payment-info">
+                                <div class="payment-icon psychology"></div>
+                                <div>
+                                    <h4>Psychology</h4>
+                                    <p>27 October 2021</p>
+                                </div>
+                            </div>
+                            <span class="amount">$120</span>
+                        </div>
+                        <div class="payment-item">
+                            <div class="payment-info">
+                                <div class="payment-icon marketing"></div>
+                                <div>
+                                    <h4>Marketing</h4>
+                                    <p>25 October 2021</p>
+                                </div>
+                            </div>
+                            <span class="amount">$60</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
