@@ -155,17 +155,25 @@
                 </div>
             </section>
 
-            <!-- Activity Chart -->
-            <section class="activity-section">
-                <div class="card">
-                    <h3>My Activity</h3>
-                    <canvas id="activityChart"></canvas>
+            <section class="dashboard-bottom-section">
+                <!-- Activity Chart -->
+                <div class="card activity-card">
+                    <div class="card-header">
+                        <h3>My Activity</h3>
+                        <div class="date-filter">
+                            <select>
+                                <option>This Month</option>
+                                <option>Last 3 Months</option>
+                                <option>This Year</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="activityChart"></canvas>
+                    </div>
                 </div>
-            </section>
 
-            <!-- Payment History -->
-            <section class="payment-history">
-                <div class="card">
+                <div class="card payment-card">
                     <div class="card-header">
                         <h3>Payment History</h3>
                         <a href="#" class="see-all">See all</a>
@@ -173,7 +181,9 @@
                     <div class="payment-list">
                         <div class="payment-item">
                             <div class="payment-info">
-                                <div class="payment-icon psychology"></div>
+                                <div class="payment-icon psychology">
+                                    <i data-lucide="book-open"></i>
+                                </div>
                                 <div>
                                     <h4>Psychology</h4>
                                     <p>27 October 2021</p>
@@ -183,10 +193,24 @@
                         </div>
                         <div class="payment-item">
                             <div class="payment-info">
-                                <div class="payment-icon marketing"></div>
+                                <div class="payment-icon marketing">
+                                    <i data-lucide="trending-up"></i>
+                                </div>
                                 <div>
                                     <h4>Marketing</h4>
                                     <p>25 October 2021</p>
+                                </div>
+                            </div>
+                            <span class="amount">$60</span>
+                        </div>
+                        <div class="payment-item">
+                            <div class="payment-info">
+                                <div class="payment-icon psychology">
+                                    <i data-lucide="book-open"></i>
+                                </div>
+                                <div>
+                                    <h4>Psychology</h4>
+                                    <p>20 October 2021</p>
                                 </div>
                             </div>
                             <span class="amount">$60</span>

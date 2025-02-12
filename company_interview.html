@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Custom Interview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            font-size: 24px;
+            color: #333333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .container h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #666666;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .start-btn, .schedule-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .start-btn {
+            background-color: #0073b1;
+            color: white;
+        }
+        .start-btn:hover {
+            background-color: #005f8d;
+        }
+        .schedule-btn {
+            background-color: #f2f2f2;
+            color: #333333;
+            border: 1px solid #cccccc;
+        }
+        .schedule-btn:hover {
+            background-color: #e0e0e0;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f2f2f2;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Create Custom Interview</h1>
+    </header>
+    <div class="container">
+        <h2>Customize Your Interview</h2>
+        <form id="interview-form">
+            <div class="form-group">
+                <label for="job-role">Job Role</label>
+                <select id="job-role" required>
+                    <option value="">Select Job Role</option>
+                    <option value="software-engineer">Software Engineer</option>
+                    <option value="data-analyst">Data Analyst</option>
+                    <option value="product-manager">Product Manager</option>
+                    <option value="ui-ux-designer">UI/UX Designer</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="skills">Skills</label>
+                <input type="text" id="skills" placeholder="e.g., Python, SQL, Machine Learning" required>
+            </div>
+            <div class="form-group">
+                <label for="experience">Experience Level (in years)</label>
+                <select id="experience" required>
+                    <option value="">Select</option>
+                    <option value="0">Fresher (0 years)</option>
+                    <option value="1">1 year</option>
+                    <option value="2">2 years</option>
+                    <option value="3">3 years</option>
+                    <option value="5">5+ years</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="target-company">Target Company</label>
+                <input type="text" id="target-company" placeholder="e.g., Tech Solutions Pvt Ltd" required>
+            </div>
+            <div class="action-buttons">
+                <button type="button" class="start-btn" onclick="startInterview()">Start AI Interview</button>
+                <button type="button" class="schedule-btn" onclick="scheduleInterview()">Schedule Interview</button>
+            </div>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2023 Job Portal. All rights reserved.</p>
+    </footer>
+    <script>
+        // Function to handle starting the AI interview
+        function startInterview() {
+            const jobRole = document.getElementById('job-role').value;
+            const skills = document.getElementById('skills').value;
+            const experience = document.getElementById('experience').value;
+            const targetCompany = document.getElementById('target-company').value;
+
+            // Validate form fields
+            if (!jobRole || !skills || !experience || !targetCompany) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            // Simulate starting the AI interview
+            alert(`Starting AI Interview for ${jobRole} at ${targetCompany} with skills: ${skills}`);
+            // Redirect to the AI interview interface or API call here
+        }
+
+        // Function to handle scheduling the interview
+        function scheduleInterview() {
+            const jobRole = document.getElementById('job-role').value;
+            const skills = document.getElementById('skills').value;
+            const experience = document.getElementById('experience').value;
+            const targetCompany = document.getElementById('target-company').value;
+
+            // Validate form fields
+            if (!jobRole || !skills || !experience || !targetCompany) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            // Simulate scheduling the interview
+            alert(`Scheduling Interview for ${jobRole} at ${targetCompany}`);
+            // Redirect to a scheduling interface or API call here
+        }
+    </script>
+</body>
+</html>
