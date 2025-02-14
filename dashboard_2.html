@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard - AI Interviews</title>
+  <style>
+    :root {
+      --navy: #26255F;
+      --accent: #60B3FA;
+      --gray-100: #F5F6FA;
+      --white: #ffffff;
+      --hover: #E0F7FA;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background-color: var(--gray-100);
+      min-height: 100vh;
+    }
+    .dashboard {
+      display: flex;
+      min-height: 100vh;
+    }
+    /* Sidebar */
+    .sidebar {
+      width: 200px;
+      background: var(--navy);
+      color: var(--white);
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      padding: 1rem;
+    }
+    .sidebar-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .sidebar img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-bottom: 0.5rem;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .nav-item {
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      font-size: 0.9rem;
+    }
+    .nav-item.active, .nav-item:hover {
+      background: var(--accent);
+    }
+    /* Main Content */
+    .main-content {
+      margin-left: 200px;
+      padding: 1rem;
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+    .section {
+      background: var(--white);
+      padding: 0.75rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      margin-bottom: 0.75rem;
+    }
+    .section h2 {
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+    /* Grid Layout */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.5rem;
+    }
+    .card {
+      background: var(--white);
+      padding: 0.5rem;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background: var(--hover);
+    }
+    .card h3 {
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+    }
+    .card p {
+      margin: 0.25rem 0;
+      color: #555;
+      font-size: 0.8rem;
+    }
+    /* Stats Side-by-Side */
+    .stats-container {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .stats-container > div {
+      flex: 1;
+      padding: 0.5rem;
+      background: var(--white);
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+      .main-content {
+        margin-left: 0;
+      }
+      .stats-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="/api/placeholder/50/50" alt="Profile">
+        <h3>Welcome, Student</h3>
+      </div>
+      <ul class="nav-links">
+        <li class="nav-item active">Dashboard</li>
+        <li class="nav-item">Mock Interviews</li>
+        <li class="nav-item">Resume Evaluator</li>
+        <li class="nav-item">Job Applications</li>
+        <li class="nav-item">Settings</li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Profile Section -->
+      <div class="section">
+        <h2>Student Profile</h2>
+        <div class="profile">
+          <img src="/api/placeholder/60/60" alt="Student Avatar">
+          <div class="profile-details">
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Global Ranking:</strong> #1,234</p>
+            <p><strong>Average Interview Score:</strong> 85%</p>
+            <p><strong>Resume Score:</strong> 92%</p>
+            <p><strong>Contact:</strong> john.doe@example.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Interview Hub -->
+      <div class="section">
+        <h2>AI Interview Hub</h2>
+        <div class="grid-container">
+          <!-- Mock Interviews -->
+          <div class="card">
+            <h3>Mock Interviews</h3>
+            <p>Practice AI-based mock interviews.</p>
+          </div>
+          <!-- Resume Evaluator -->
+          <div class="card">
+            <h3>Resume Evaluator</h3>
+            <p>Get AI-based resume feedback.</p>
+          </div>
+          <!-- Job Applications -->
+          <div class="card">
+            <h3>Job Applications</h3>
+            <p>Apply to AI-recommended jobs.</p>
+          </div>
+          <!-- Performance Heatmap -->
+          <div class="card">
+            <h3>Performance Heatmap</h3>
+            <p>Analyze your interview progress.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- LeetCode and GitHub Stats (Side by Side) -->
+      <div class="section">
+        <h2>Progress Stats</h2>
+        <div class="stats-container">
+          <!-- LeetCode Stats -->
+          <div>
+            <h3>LeetCode Progress</h3>
+            <div align="center">
+              <p align="center">
+                <img src="https://img.shields.io/badge/dynamic/json?style=for-the-badge&labelColor=black&color=%23ffa116&label=Solved&query=solved&url=https://leetcode-badge.vercel.app/api/users/sathwikshetty2005&logo=leetcode&logoColor=yellow" alt="LeetCode Solved"/>
+                <img src="https://img.shields.io/badge/dynamic/json?style=for-the-badge&labelColor=black&color=%23ffa116&label=Ranking&query=ranking&url=https://leetcode-badge.vercel.app/api/users/sathwikshetty2005&logo=leetcode&logoColor=yellow" alt="LeetCode Ranking"/>
+              </p>
+              <img src="https://leetcard.jacoblin.cool/sathwikshetty2005?theme=dark&font=Adamina&ext=heatmap&animation=true&border=1&radius=20" alt="LeetCode Stats"/>
+            </div>
+          </div>
+          <!-- GitHub Stats -->
+          <div>
+            <h3>GitHub Activity</h3>
+            <div align="center">
+              <img src="https://github-readme-stats.vercel.app/api?username=sathwikshetty33&show_icons=true&theme=tokyonight" alt="GitHub Stats" />
+              <p align="center">
+                <img src="https://github-readme-streak-stats.herokuapp.com/?user=sathwikshetty33&theme=tokyonight" alt="GitHub Streak"/>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
